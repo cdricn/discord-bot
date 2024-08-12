@@ -15,5 +15,5 @@ const promoteTotal = [
 ];
 
 function test() {
-  promoteTotal
-}
+} 
+
