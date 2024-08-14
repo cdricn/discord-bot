@@ -1,8 +1,6 @@
 require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
 const { Client, Collection, Events, GatewayIntentBits, IntentsBitField } = require('discord.js');
-//const eventHandler = require('./handlers/eventHandler');
+const eventHandler = require('./handlers/eventHandler');
 
 const client = new Client({
   intents: [
@@ -13,10 +11,6 @@ const client = new Client({
   ],
 });
 
-//eventHandler(client);
-client.commands = new Collection();
-
-const foldersPath = path.join(__dirname, 'commands');
-const commandFolders = fs.readdirSync(foldersPath);
+eventHandler(client);
 
 client.login(process.env.TOKEN);

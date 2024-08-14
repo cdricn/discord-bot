@@ -1,3 +1,16 @@
+const { testServer } = require('../../../config.json');
+const getLocalCommands = require('../../utils/getLocalCommands');
+
+module.exports = (client) => {
+  const localCommands = getLocalCommands();
+  console.log(localCommands);
+};
+
+
+
+
+
+/*
 require('dotenv').config();
 const { REST, Routes, ApplicationCommandOptionType } = require('discord.js');
 
@@ -20,3 +33,4 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
     console.log(`Encountered error: ${error}`)
   }
 })();
+*/
